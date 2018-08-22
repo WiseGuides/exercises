@@ -42,7 +42,7 @@ let associates = ['Robert Carey', 'Jack McGurn', 'Frank Nitti'];
 
 // 17. Create an empty array, 'deck'
 
-// 18. Run the following code:
+// 18. Uncomment and run the following code:
 // suits.forEach( suit => {
 // 	pips.forEach( pip => {
 // 		deck.push (pip + ' of ' + suit);
