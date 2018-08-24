@@ -33,16 +33,16 @@ describe('array.for-each.exercise', () => {
     expect(temperatures.length).toBe(10);
   }),
   it('⇨ tempTotalNRF should equal sum of temperatures', () => {
-    expect(tempTotalNRF).toBe(temperatures.reduce( (accumulator, temp) => {return accumulator + temp}));
+    expect(tempTotalNRF).toBe(temperatures.reduce( (accumulator, temp) => accumulator + temp));
   }),
   it('⇨ tempTotalARF should equal sum of temperatures', () => {
-    expect(tempTotalARF).toBe(temperatures.reduce((accumulator, temp) => {return accumulator + temp}));
+    expect(tempTotalARF).toBe(temperatures.reduce((accumulator, temp) => accumulator + temp));
   }),
   it('⇨ tempTotalNAF should equal sum of temperatures', () => {
-    expect(tempTotalNAF).toBe(temperatures.reduce((accumulator, temp) => {return accumulator + temp}));
+    expect(tempTotalNAF).toBe(temperatures.reduce((accumulator, temp) => accumulator + temp));
   }),
   it('⇨ tempTotalAAF should equal sum of temperatures', () => {
-    expect(tempTotalAAF).toBe(temperatures.reduce((accumulator, temp) => {return accumulator + temp}));
+    expect(tempTotalAAF).toBe(temperatures.reduce((accumulator, temp) => accumulator + temp));
   }),
   it('⇨ tempAvgNRF should equal avg of temperatures', () => {
     expect(tempAvgNRF).toBe(avg(temperatures));
