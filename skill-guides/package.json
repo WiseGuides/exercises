@@ -1,0 +1,15 @@
+{
+  "name": "skill-guides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "array.for-each.exercise.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}
