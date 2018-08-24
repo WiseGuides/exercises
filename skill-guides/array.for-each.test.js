@@ -10,6 +10,11 @@ const {
   peopleNamesNAF,
   peopleNamesARF,
   peopleNamesNRF,
+  suits,
+  pips,
+  deck4a,
+  deck5a,
+  gradeDistribution
   } = require('./array.for-each.exercise');
 
   let _avg;
@@ -77,6 +82,48 @@ describe('array.for-each.exercise', () => {
     peopleNamesNRF.forEach( (name, index) => {
       expect(name).toBe(`${people[index].firstName} ${people[index].lastName}`);
     });
+  }),
+  it('⇨ suits should have Clubs, Diamonds, Hearts, and Spades only', () => {
+    expect(suits.length).toBe(4);
+    expect(suits).toContain('Clubs');
+    expect(suits).toContain('Diamonds');
+    expect(suits).toContain('Hearts');
+    expect(suits).toContain('Spades');
+  }),
+  it('⇨ pips should have Two thru Ace only', () => {
+    expect(pips.length).toBe(13);
+    let arr = ["Two", "Three", "Four",  "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"];
+    arr.forEach( (pip) => {
+      expect(pips).toContain(pip);
+    });
+  }),
+  it('⇨ deck4a should have a normal set of playing cards only', () => {
+    expect(deck4a.length).toBe(52);
+    pips.forEach( (pip) => {
+      suits.forEach( (suit) => {
+        expect(deck4a).toContain(`${pip} of ${suit}`);
+      });
+    });
+  }),
+  it('⇨ deck5a should have 52 objects, each with a pip and a suit representing a full deck', () => {
+    expect(deck5a.length).toBe(52);
+    pips.forEach( (pip) => {
+      suits.forEach( (suit) => {
+        expect(deck5a).toContainEqual({pip, suit});
+      })
+    })
+  }),
+  it('⇨ gradeDistribution should have 4 As', () => {
+    expect(gradeDistribution['A']).toBe(4);
+  }),
+  it('⇨ gradeDistribution should have 4 Bs', () => {
+    expect(gradeDistribution['B']).toBe(4);
+  }),
+  it('⇨ gradeDistribution should have 3 Cs', () => {
+    expect(gradeDistribution['C']).toBe(3);
+  }),
+  it('⇨ gradeDistribution should have 2 Ds', () => {
+    expect(gradeDistribution['D']).toBe(2);
   })
 
 });

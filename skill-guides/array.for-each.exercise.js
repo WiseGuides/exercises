@@ -68,43 +68,46 @@ let peopleNamesNRF = [];
 people.forEach( (obj) => {
   peopleNamesNRF.push( `${obj.firstName} ${obj.lastName}`);
 });
-// 2. Using forEach and an anonymous regular function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesARF
+// 5. Using forEach and an anonymous regular function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesARF
 // (Suggestion: Use template literals to combine firstName and lastName into a single string) 
 let peopleNamesARF = [];
 people.forEach( (obj) => {
   peopleNamesARF.push( `${obj.firstName} ${obj.lastName}`);
 });
 
-
-/************************************************/
+/** Exercise 4 */
 
 // NOTE: This exercise requires you to have a *nested* loop -- in other words, a loop within another loop. It's actually not as bad as it might seem at first. Here's a simple illustration of that using an anonymous arrow function:
 
-/*** Exercise 4a */
 // 1. Create an array, suits, made up of Clubs, Diamonds, Hearts, and Spades
+let suits = [];
+suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
 
 // 2. Create an array, pips, made up of Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, and Ace
+let pips = [];
+pips = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"];
 
 // 3. Create an empty array called deck4a
+let deck4a = [];
 
-// 4. Loop over pips using an anonymous regular function. For the method body of pips.forEach, loop over suits using an anonymous regular function. Within suits.forEach, create a string made up of the pip, the string, " of ", and the suit. Push that string into the deck4a array. When done, log the deck4a array to the console.
+// 4. Loop over pips using an anonymous arrow function. For the method body of pips.forEach, loop over suits using an anonymous regular function. Within suits.forEach, create a string made up of the pip, the string, " of ", and the suit. Push that string into the deck4a array.
+pips.forEach( (pip) => {
+  suits.forEach( (suit) => {
+    deck4a.push(`${pip} of ${suit}`);
+  })
+})
 
-/*** Exercise 4b */
-// 1. Create an empty array called deck4b
-
-// 2. Loop over pips using an anonymous arrow function. For the method body of pips.forEach, loop over suits using an anonymous arrow function. Within suits.forEach, create a string made up of the pip, the string, " of ", and the suit. Push that string into the deck4b array. When done, log the deck4b array to the console.
-
-/************************************************/
-
+/** Exercise 5 */
 // NOTE: This exercise is similar to the last one. The difference is that, instead of pushing strings into an array, you'll first build an object with two properties: suit and pip. Then push these objects into the array.
-/*** Exercise 5a */
-// 1. Create an empty array called deck5a
 
-// 2. Loop over pips using an anonymous arrow function. For the method body of pips.forEach, loop over suits also using a anonymous arrow function. Within suits.forEach, create an object with two properties, pip and suit, that will hold the values that come from the iteration. Push that object into the deck2 array. When done, log the deck5a array to the console.
+let deck5a = [];
+pips.forEach( (pip) => {
+  suits.forEach( (suit) => {
+    deck5a.push({pip, suit});
+  });
+})
 
-/************************************************/
-
-/*** Exercise 6a */
+/** Exercise 6 */
 // Given this array...
 const testScores = ["A", "B", "A", "D", "C", "B", "C", "A", "B", "C", "B", "A", "D"];
 
@@ -114,7 +117,11 @@ const gradeDistribution = {
 	B: 0,
 	C: 0,
 	D: 0
-}
+};
+
+testScores.forEach( (score) => {
+  gradeDistribution[score]++;
+});
 
 // ... loop over testScores, incrementing the appropriate value in gradeDistribution, using the format of forEach you prefer.
 // HINT: You don't need to use conditional code here. There's a much more concise way.
@@ -130,5 +137,10 @@ module.exports = {
   peopleNamesAAF,
   peopleNamesARF,
   peopleNamesNAF,
-  peopleNamesNRF
+  peopleNamesNRF,
+  suits,
+  pips,
+  deck4a,
+  deck5a,
+  gradeDistribution
 };
