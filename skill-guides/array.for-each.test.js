@@ -6,7 +6,10 @@ const {
   tempTotalAAF, 
   tempAvgNRF,
   people,
-  peopleNames
+  peopleNamesAAF,
+  peopleNamesNAF,
+  peopleNamesARF,
+  peopleNamesNRF,
   } = require('./array.for-each.exercise');
 
   let _avg;
@@ -20,7 +23,7 @@ const {
   }
   
 
-describe('array.for-each.exericse', () => {
+describe('array.for-each.exercise', () => {
   it('⇨ temperatures should have 10 elements', () => {
     expect(temperatures.length).toBe(10);
   }),
@@ -54,14 +57,24 @@ describe('array.for-each.exericse', () => {
       
     });
   }),
-  it('⇨ peopleNames should all be strings and not be blank', () => {
-    peopleNames.forEach( (name) => {
+  it('⇨ peopleNamesAAF should all be strings and not be blank', () => {
+    peopleNamesAAF.forEach( (name) => {
       expect(typeof(name)).toBe('string');
       expect(name.length).toBeGreaterThan(0);
     });
   }),
-  it('⇨ peopleNames should accurately be the first and last names of the people array', () => {
-    peopleNames.forEach( (name, index) => {
+  it('⇨ peopleNamesNAF should accurately be the first and last names of the people array', () => {
+    peopleNamesNAF.forEach( (name, index) => {
+      expect(name).toBe(`${people[index].firstName} ${people[index].lastName}`);
+    });
+  }),
+  it('⇨ peopleNamesARF should accurately be the first and last names of the people array', () => {
+    peopleNamesARF.forEach( (name, index) => {
+      expect(name).toBe(`${people[index].firstName} ${people[index].lastName}`);
+    });
+  }),
+  it('⇨ peopleNamesNRF should accurately be the first and last names of the people array', () => {
+    peopleNamesNRF.forEach( (name, index) => {
       expect(name).toBe(`${people[index].firstName} ${people[index].lastName}`);
     });
   })

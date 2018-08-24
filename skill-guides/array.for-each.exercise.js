@@ -1,54 +1,47 @@
-/*** Exercise 1a */
+/** Exercise 1 */
 // 1. Create an array, temperatures, with 10 different temperatures
 let temperatures;
 temperatures = [93,87,84,81,88,91,93,86,101,99];
-// module.exports.temperatures = temperatures;
 
-// 2. Loop over the temperatures array using a named regular function that adds all the temperatures together into provided tempTotalNRF
+/** Exercise 2 */
+
+// 1. Loop over the temperatures array using a named regular function that adds all the temperatures together into provided tempTotalNRF
 let tempTotalNRF = 0;
 function sumTemps(temp) {
   tempTotalNRF += temp;
 }
 temperatures.forEach(sumTemps);
 
-
-
-/*** Exercise 1b */
-// 1. Loop over the temperatures array using a anonymous regular function that adds all the temperatures together into provided tempTotalARF
+// 2. Loop over the temperatures array using a anonymous regular function that adds all the temperatures together into provided tempTotalARF
 let tempTotalARF = 0;
 temperatures.forEach( function(temp) {
   tempTotalARF += temp;
 })
 
-/*** Exercise 1c */
-// 1. Loop over the temperatures array using a named arrow function that adds all the temperatures together into provided tempTotalNAF
+// 3. Loop over the temperatures array using a named arrow function that adds all the temperatures together into provided tempTotalNAF
 let tempTotalNAF = 0;
 let nafAdder = (temp) => {
   tempTotalNAF += temp;
 }
 temperatures.forEach(nafAdder);
 
-/*** Exercise 1d */
-// 1. Loop over the temperatures array using an anonymous arrow function that adds all the temperatures together into provided tempTotalAAF
+// 4. Loop over the temperatures array using an anonymous arrow function that adds all the temperatures together into provided tempTotalAAF
 let tempTotalAAF = 0;
 temperatures.forEach((temp) => {
   tempTotalAAF += temp;
 });
 
-/************************************************/
-
-
-// 2. Output the average temperature by dividing the total by the number of elements in the array 
+/** Exercise 3 */
+// 1. Output the average temperature by dividing the total by the number of elements in the array 
+let tempAvgNRF;
 let _sum = 0;
 temperatures.forEach( (temp) => {
   _sum += temp;
 })
 
-let tempAvgNRF = _sum/temperatures.length;
+tempAvgNRF = _sum/temperatures.length;
 
-/************************************************/
-
-/** Exercise 3a */
+/** Exercise 3 */
 // 1. Create 5 objects with 2 properties each: firstName and lastName (providing values for these). As you do so, push them into provided array, people.
 let people = [];
 people.push({firstName: 'Hal', lastName: 'Helms'});
@@ -57,24 +50,31 @@ people.push({firstName: 'HP', lastName: 'Helms'});
 people.push({firstName: 'Andrew', lastName: 'Helms'});
 people.push({firstName: 'Tim', lastName: 'Helms'});
 
-// 2. Using forEach, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNames
+// 2. Using forEach and an anonymous arrow function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesAAF
 // (Suggestion: Use template literals to combine firstName and lastName into a single string) 
-let peopleNames = [];
+let peopleNamesAAF = [];
 people.forEach( (obj) => {
-  peopleNames.push( `${obj.firstName} ${obj.lastName}`);
+  peopleNamesAAF.push( `${obj.firstName} ${obj.lastName}`);
+});
+// 3. Using forEach and an named arrow function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesNAF
+// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
+let peopleNamesNAF = [];
+people.forEach( (obj) => {
+  peopleNamesNAF.push( `${obj.firstName} ${obj.lastName}`);
+});
+// 4. Using forEach and a named regular function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesNRF
+// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
+let peopleNamesNRF = [];
+people.forEach( (obj) => {
+  peopleNamesNRF.push( `${obj.firstName} ${obj.lastName}`);
+});
+// 2. Using forEach and an anonymous regular function, loop over the people array, combining firstName and lastName (with a space in between) into provided array, peopleNamesARF
+// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
+let peopleNamesARF = [];
+people.forEach( (obj) => {
+  peopleNamesARF.push( `${obj.firstName} ${obj.lastName}`);
 });
 
-/*** Exercise 3b */
-// 1. Using forEach, loop over the people array, outputting the firstName and lastName, using a anonymous regular function.
-// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
-
-/*** Exercise 3c */
-// 1. Using forEach, loop over the people array, outputting the firstName and lastName, using a named arrow function.
-// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
-
-/*** Exercise 3d */
-// 1. Using forEach, loop over the people array, outputting the firstName and lastName, using an anonymous arrow function.
-// (Suggestion: Use template literals to combine firstName and lastName into a single string) 
 
 /************************************************/
 
@@ -127,5 +127,8 @@ module.exports = {
   tempTotalAAF,
   tempAvgNRF,
   people,
-  peopleNames
+  peopleNamesAAF,
+  peopleNamesARF,
+  peopleNamesNAF,
+  peopleNamesNRF
 };
